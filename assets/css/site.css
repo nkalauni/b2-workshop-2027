@@ -640,11 +640,14 @@ figure figcaption { font-size: .84rem; color: var(--ink-soft); margin-top: .7rem
   text-transform: uppercase; color: var(--ink-faint); margin: 0;
 }
 .hosts img { display: block; }
-.hosts__has { height: 46px; width: auto; }
-.hosts__b2 { height: 58px; width: auto; }
+/* The B2 mark is a wordmark lockup, not an icon, so it needs enough height for
+   its "The University of Arizona" line to stay legible. Sized against the HAS
+   lockup so the two read as siblings rather than one dominating. */
+.hosts__has { height: 52px; width: auto; }
+.hosts__b2 { height: 64px; width: auto; }
 @media (max-width: 560px) {
-  .hosts__has { height: 34px; }
-  .hosts__b2 { height: 44px; }
+  .hosts__has { height: 38px; }
+  .hosts__b2 { height: 50px; }
 }
 
 /* ---------- Footer ---------- */

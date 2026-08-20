@@ -12,7 +12,7 @@ lossy and not worth re-editing.
 | `campus-aerial.jpg` | Venue | University of Arizona campus aerial |
 | `hoshin.jpg` | Home, Theme, Organizers | Hoshin's headshot, resized to 900×1350 |
 | `has-lockup.png` | Footer band, every page | Official HAS / College of Science lockup |
-| `b2-logo.png` | Footer band, every page | Biosphere 2 mark, white background knocked out to transparent |
+| `b2-logo.png` | Footer band, every page | Official Biosphere 2 / University of Arizona wordmark lockup, supplied as JPEG; white background knocked out to transparent |
 
 ## Replacing one
 
@@ -39,6 +39,17 @@ sips -Z 2200 photo.jpg          # macOS, no extra software
 
 Then check the total: the whole site should stay well under 2 MB of images, or
 it gets slow on conference wifi.
+
+## About the B2 logo
+
+It arrived as a JPEG on a flat white background, which cannot sit on a coloured
+surface as-is. The transparent PNG in this folder was made by ramping alpha
+across the near-white pixels and then un-matting the partial ones from white,
+so the edges carry no pale fringe. A plain "make white transparent" would have
+left a visible halo.
+
+If you ever get a vector version (SVG or EPS) from Biosphere 2, use that
+instead — it will be sharper at every size and a fraction of the file size.
 
 ## Credit and licensing
 
