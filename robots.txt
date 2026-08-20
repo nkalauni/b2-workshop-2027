@@ -1,0 +1,4 @@
+# Private working draft. Remove this file (and the noindex meta tag in
+# tools/build.py) when the site goes public.
+User-agent: *
+Disallow: /

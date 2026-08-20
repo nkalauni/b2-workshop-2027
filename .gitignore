@@ -1,0 +1,9 @@
+.DS_Store
+*.swp
+__pycache__/
+*.pyc
+
+# Never commit the planning documents -- the invitee spreadsheet contains
+# personal email addresses.
+*.docx
+*.xlsx
