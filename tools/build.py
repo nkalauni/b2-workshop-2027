@@ -258,7 +258,7 @@ PROGRAM = [
             ("plain", "17:30 – 18:30", "Poster session", "", 60, 0),
             ("meal", "18:30 – 20:00", "Dinner", "", 0, 0),
             ("hvg", "20:00 – 21:30", "Reflections and celebration of Hoshin&rsquo;s career",
-             "s-hvg|An open evening of recollections from colleagues and former students", 90, 0),
+             "s-hvg|An evening set aside to reminisce about Hoshin&rsquo;s career", 90, 0),
         ],
     },
     {
@@ -602,8 +602,7 @@ def build_index():
             </li>
             <li>
               <time datetime="2027-05-17T20:00">Mon May 17, 20:00</time>
-              <span>An evening at Biosphere 2 to reminisce about Hoshin&rsquo;s career, open to
-              colleagues and former students.</span>
+              <span>An evening at Biosphere 2 to reminisce about Hoshin&rsquo;s career.</span>
             </li>
           </ul>
         </div>
@@ -824,8 +823,7 @@ def build_program():
       <p class="eyebrow">Presenting</p>
       <h2>Four poster sessions, one hour each.</h2>
       <p>General participants are asked to bring a poster showing how their work relates to the
-      workshop theme. Posters stay up across both days; the scheduled sessions are when presenters
-      are asked to stand with them.</p>
+      workshop theme.</p>
       <div class="btn-row">
         <a class="btn btn--ghost" href="register.html">Posters &amp; registration</a>
       </div>
@@ -962,8 +960,8 @@ def build_venue():
           set aside for arrival, visits to the Department of Hydrology &amp; Atmospheric Sciences on
           the University of Arizona campus, and an informal evening get-together at Hoshin&rsquo;s home.
           Dinner that evening is on your own.</p>
-          <p>Accommodation in Tucson for the nights before the transfer is arranged by participants.
-          Recommendations will be posted alongside registration.</p>
+          <p>Accommodation in Tucson for the nights before the transfer is arranged by
+          participants.</p>
         </div>
       </div>
     </div>
@@ -972,10 +970,10 @@ def build_venue():
   <section class="cta">
     <div class="wrap wrap--narrow">
       <p class="eyebrow">Staying on site</p>
-      <h2>Accommodation and meals at B2 are covered by the registration fee.</h2>
-      <p>Lodging at Biosphere 2 for the nights of Sunday, Monday and Tuesday, together with meals
-      on site, is included in registration. Details and costs will be published when registration
-      opens.</p>
+      <h2>Participants stay on site at Biosphere 2.</h2>
+      <p>A registration fee will be charged to cover logistical expenses, including accommodation
+      and meals at Biosphere 2. What the fee covers and what participants pay directly will be
+      confirmed when registration opens.</p>
       <div class="btn-row"><a class="btn btn--ghost" href="register.html">Registration</a></div>
     </div>
   </section>
@@ -1043,8 +1041,8 @@ def build_register():
         <article class="card">
           <p class="card__tag">Fee</p>
           <h3>A registration fee will be charged</h3>
-          <p>It covers logistical expenses including accommodation and meals at Biosphere 2.
-          The amount will be published when registration opens.</p>
+          <p>It goes toward logistical expenses including accommodation and meals at Biosphere 2.
+          The amount, and exactly what it covers, will be published when registration opens.</p>
         </article>
         <article class="card">
           <p class="card__tag">Presenting</p>
@@ -1061,9 +1059,7 @@ def build_register():
       <p class="eyebrow">Posters</p>
       <h2>Every participant presents</h2>
       <p>The poster sessions are not a side activity. Four hour-long sessions are scheduled across
-      Monday and Tuesday, and they are where most of the workshop&rsquo;s exchange actually happens.
-      Posters remain on display throughout; the scheduled sessions are when presenters are asked to
-      stand with them.</p>
+      Monday and Tuesday, and they are a large part of how the workshop is meant to work.</p>
       <p>An abstract submission system is being set up. Submission opens alongside registration,
       and the deadline will be announced with it.</p>
       <div class="note" style="margin-top:2rem">
@@ -1135,10 +1131,6 @@ def build_organizers():
       <p style="margin-bottom:2rem">Graduate students in HAS handling the program, registration,
       abstracts, communications and this website.</p>
 """ + roster(students) + """
-      <div class="note" style="margin-top:2rem">
-        The workshop is being planned alongside El D&iacute;a del Agua y La Atm&oacute;sfera 2027,
-        the department&rsquo;s annual student-run symposium.
-      </div>
     </div>
   </section>
 
