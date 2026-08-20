@@ -1,84 +1,72 @@
-# Hosting and sharing
+# Deploying
 
-Two separate questions, and they have different answers.
+The site is public, published from this repository by GitHub Pages at
+**<https://nkalauni.github.io/b2-workshop-2027/>**.
 
-## 1. Sharing the draft privately, right now
+There is no build server and no Actions workflow. GitHub serves the `.html`
+files in the repository root exactly as they are, so:
 
-**GitHub Pages cannot do this.** A private repository still publishes a
-*public* website. Only GitHub Enterprise Cloud offers access-controlled Pages
-("visible only to users with repository access"), and a personal account does
-not have it. Making the repo private protects the source, not the site.
+```sh
+python3 tools/build.py     # only if you edited tools/build.py
+git add -A
+git commit -m "Update the program"
+git push
+```
 
-Since the Speakers page lists people who have been invited but have not
-accepted, the preview needs to be genuinely gated, not merely at an
-unguessable URL.
+The live site updates within a minute or two. `.nojekyll` is present, which
+stops GitHub trying to run Jekyll over the files.
 
-### Recommended: Cloudflare Pages + Cloudflare Access (free)
+## Checking a change before you push
 
-Cloudflare's Zero Trust free tier includes 50 seats, and Access can email a
-one-time PIN to an allowlist of addresses. Nobody needs a Cloudflare account —
-Bo just enters his email, gets a 6-digit code, and is in.
+```sh
+python3 -m http.server 8000
+```
 
-1. Create a free Cloudflare account at <https://dash.cloudflare.com/sign-up>.
-2. **Workers & Pages → Create → Pages → Connect to Git**, authorise GitHub, and
-   pick this repository. It can stay private.
-3. Build settings: **framework preset = None**, **build command = empty**,
-   **build output directory = `/`**. There is no build step.
-4. Deploy. You get a URL like `b2-workshop-2027.pages.dev`.
-5. **Zero Trust → Access → Applications → Add an application → Self-hosted.**
-   - Application domain: your `*.pages.dev` hostname
-   - Policy: **Action = Allow**, **Include = Emails**, then paste the
-     organizing committee's addresses one per line.
-   - Under login methods, leave **One-time PIN** enabled.
-6. Send the committee the URL. First visit prompts for their email, then a PIN.
+Then open <http://localhost:8000>. This serves the same files GitHub does, so
+what you see is what will ship.
 
-Add or remove reviewers by editing that email list. No repo access needed.
+## Pages settings
 
-### Simpler alternatives, if Cloudflare is more setup than you want
+Already configured, but for reference: **Settings → Pages → Source: Deploy from
+a branch → `main` / `(root)`**.
 
-- **Local preview.** `cd site && python3 -m http.server 8000`, then open
-  <http://localhost:8000>. Good enough for showing someone in person.
-- **Repository collaborators.** Add the committee to the private repo and let
-  them clone and run the command above. Works, but expects them to use git.
-- **Netlify / Vercel password protection.** Both have it; both put it behind a
-  paid tier. Cloudflare's free tier is the reason it is recommended above.
+## Custom domain
 
-## 2. Going public, later
+If the department gets a domain or an `arizona.edu` subdomain from UITS:
 
-When the committee signs off and speakers are confirmed:
-
-1. In `tools/build.py`, set `PRIVATE_DRAFT = False` and re-run
-   `python3 tools/build.py`. This removes the draft banner and the
-   `noindex` meta tag from every page.
-2. Delete `robots.txt`.
-3. Make the repository public, then **Settings → Pages → Source: Deploy from a
-   branch → `main` / `(root)`**. The site appears at
-   `https://<user>.github.io/<repo>/` within a minute or two.
-4. `.nojekyll` is already present, which stops GitHub trying to run Jekyll over
-   the files.
-
-### Custom domain
-
-If you get a domain or an `arizona.edu` subdomain from UITS:
-
-1. Add a file named `CNAME` at the repo root containing just the hostname,
-   e.g. `b2workshop.arizona.edu`.
-2. Point DNS at GitHub — a `CNAME` record to `<user>.github.io` for a
-   subdomain, or the four `A` records in GitHub's docs for an apex domain.
+1. Add a file named `CNAME` in the repository root containing only the
+   hostname, e.g. `b2workshop.arizona.edu`.
+2. Point DNS at GitHub — a `CNAME` record to `nkalauni.github.io` for a
+   subdomain, or GitHub's four `A` records for an apex domain.
 3. **Settings → Pages → Custom domain**, enter it, and tick **Enforce HTTPS**
    once the certificate is issued.
 
-A custom domain works the same way on Cloudflare Pages, which may be simpler if
-you have already set it up for the private preview — in which case you can skip
-GitHub Pages entirely and just remove the Access policy at launch.
+Doing this also makes the site independent of whose personal account hosts it,
+which is worth having before the URL goes out on a flyer.
 
-## Checklist before the site goes public
+## Moving the repository to a department organization
 
-- [ ] Committee has approved publishing invited-but-unconfirmed speaker names,
-      or those names have been replaced with confirmed ones
-- [ ] `has.reasoning@arizona.edu` exists and is being read
-- [ ] `PRIVATE_DRAFT = False` and pages rebuilt
-- [ ] `robots.txt` deleted
-- [ ] Real photographs in `assets/img/` (see the README there)
-- [ ] Registration page updated with actual dates and the fee
-- [ ] Someone has opened every page on a phone
+The site currently lives under a personal account. Transferring it later
+(**Settings → General → Transfer ownership**) keeps all history, and GitHub
+redirects the old URL. If you transfer, the Pages URL changes to
+`https://<org>.github.io/b2-workshop-2027/` unless a custom domain is set —
+another reason to sort the domain out first.
+
+## Taking the site private again
+
+If you ever need to pull it back to a reviewers-only draft, set
+`PRIVATE_DRAFT = True` in `tools/build.py` and rebuild. That restores the draft
+banner and the `noindex` tag on every page. Note that this does *not* hide the
+site: **a private repository still publishes a public website.** Access-
+controlled Pages requires GitHub Enterprise Cloud. For a genuinely gated
+preview you would need to host it elsewhere — Cloudflare Pages plus Cloudflare
+Access does it on the free tier, with email one-time PINs.
+
+## Still to do before this is print-ready
+
+- [ ] Confirm `has.reasoning@arizona.edu` exists and is being read — it is the
+      contact address on every page
+- [ ] Registration page still says "date to be announced"
+- [ ] Abstract submission system not chosen, so nothing is linked
+- [ ] Photographer credits in captions, if B2 requires them
+- [ ] Workshop logo and flyer, once they exist

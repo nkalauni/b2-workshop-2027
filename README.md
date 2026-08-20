@@ -5,10 +5,9 @@ Professor Hoshin V. Gupta.
 
 Hosted by the Department of Hydrology & Atmospheric Sciences, University of Arizona.
 
-> **Status: private working draft.** Every speaker listed is *invited, not
-> confirmed* — replies were due September 9, 2026. Do not make this repository
-> or the site public until the organizing committee has signed off. See
-> [DEPLOY.md](DEPLOY.md).
+**Live at <https://nkalauni.github.io/b2-workshop-2027/>** — published from
+`main` via GitHub Pages. Pushing to `main` redeploys within a minute or two.
+See [DEPLOY.md](DEPLOY.md).
 
 ## Running it
 
@@ -53,11 +52,16 @@ to run the build will silently undo your work.
 | Menu and scroll behaviour | `assets/js/site.js` |
 | Photographs | `assets/img/` — see the README in that folder |
 
-### Updating a speaker when they accept
+### Changing the speaker list
 
-In `SESSIONS`, change that person's status from `"invited"` to `"confirmed"`
-and rebuild. The "Invited" badge disappears. When everyone in a session is
-confirmed, delete the notice block in `build_speakers()`.
+Edit the `SESSIONS` list in `tools/build.py` and rebuild. Each entry is
+`(name, affiliation, role, topic, status)`. The `status` field no longer
+changes what is rendered — everyone listed appears as a speaker — but it is
+kept so the committee can track who has actually replied.
+
+Named alternates and the "other possibilities" brainstorm list are deliberately
+not on the site. Being publicly listed as somebody's fallback is worse than not
+being listed at all.
 
 ## Design notes for whoever picks this up
 
@@ -71,6 +75,10 @@ confirmed, delete the notice block in `build_speakers()`.
   honest minute counts or the whole device becomes a lie.
 - Typefaces: Newsreader (display), IBM Plex Sans (body), IBM Plex Mono (times,
   labels, data). Loaded from Google Fonts.
+- The hero photograph sits under a *directional* scrim — heavy on the left where
+  the headline is, light on the right so the building stays visible. If you swap
+  the hero image for one composed the other way round, flip the gradient angle
+  in `.hero__frame` or the headline will lose contrast.
 - The site works with JavaScript disabled and prints legibly — the Program page
   makes a decent handout on paper.
 
@@ -85,5 +93,5 @@ that way.
 
 - Registration dates and fee are unset, pending funding decisions
 - Abstract submission system not yet chosen, so nothing is linked
-- No photographs yet — placeholders are showing
 - Workshop logo and flyer (Hossein and Maria) not yet incorporated
+- Photographer credits not added to captions — check whether B2 requires them

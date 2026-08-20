@@ -225,12 +225,19 @@ a:hover { color: var(--mesa-deep); }
   position: absolute; inset: 0; z-index: -2;
   background-image: var(--hero-img, none);
   background-size: cover;
-  background-position: center 60%;
-  opacity: .5;
+  background-position: 62% 55%;
+  opacity: 1;
 }
 /* Fallback atmosphere when no photograph is present: the B2 space-frame */
 .hero__frame {
   position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(0,28,72,.55) 0%, rgba(0,28,72,.15) 34%, rgba(0,28,72,.72) 88%, var(--midnight) 100%),
+    linear-gradient(96deg, rgba(0,28,72,.93) 0%, rgba(0,28,72,.86) 26%, rgba(0,28,72,.55) 54%, rgba(0,28,72,.3) 78%, rgba(0,28,72,.45) 100%),
+    linear-gradient(0deg, rgba(0,20,52,.35), rgba(0,20,52,.35));
+}
+/* Interior pages have no photograph, so they keep the original atmosphere. */
+.hero--plain .hero__frame {
   background:
     linear-gradient(180deg, rgba(0,28,72,.35) 0%, rgba(0,28,72,.82) 62%, var(--midnight) 100%),
     radial-gradient(120% 90% at 78% 8%, rgba(55,141,189,.5) 0%, transparent 58%),
@@ -244,6 +251,15 @@ a:hover { color: var(--mesa-deep); }
 
 .hero__inner { padding-block: clamp(4.5rem, 13vw, 9rem) clamp(3.5rem, 8vw, 5.5rem); position: relative; }
 
+@media (max-width: 760px) {
+  .hero__media { background-position: 68% 50%; }
+  .hero:not(.hero--plain) .hero__frame {
+    background:
+      linear-gradient(180deg, rgba(0,28,72,.72) 0%, rgba(0,28,72,.66) 40%, rgba(0,28,72,.88) 86%, var(--midnight) 100%),
+      linear-gradient(0deg, rgba(0,20,52,.3), rgba(0,20,52,.3));
+  }
+}
+
 .hero .eyebrow { color: var(--sky); }
 .hero .eyebrow::after { background: rgba(129,211,235,.3); }
 
@@ -252,7 +268,9 @@ a:hover { color: var(--mesa-deep); }
   max-width: 17ch;
   font-weight: 400;
   letter-spacing: -.025em;
+  text-shadow: 0 1px 24px rgba(0,14,36,.55);
 }
+.hero__sub, .hero .eyebrow, .hero__honoree { text-shadow: 0 1px 12px rgba(0,14,36,.5); }
 .hero h1 em {
   font-style: italic;
   color: var(--sky);
@@ -350,7 +368,7 @@ a:hover { color: var(--mesa-deep); }
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
-.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 14%; }
 .portrait__ph {
   font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
   text-transform: uppercase; color: #9C7A66; text-align: center;
@@ -581,6 +599,7 @@ a:hover { color: var(--mesa-deep); }
   overflow: hidden;
   position: relative;
 }
+.figure-ph--tall { aspect-ratio: 3 / 2; }
 .figure-ph img { width: 100%; height: 100%; object-fit: cover; }
 .figure-ph__label {
   font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
@@ -601,6 +620,32 @@ figure figcaption { font-size: .84rem; color: var(--ink-soft); margin-top: .7rem
 .cta .eyebrow { color: var(--sky); }
 .cta .eyebrow::after { background: rgba(129,211,235,.3); }
 .cta a { color: var(--sky); }
+
+/* ---------- Host / venue logo band ----------
+   The UA and Biosphere 2 marks are both dark-on-transparent official artwork,
+   so they sit on a light surface above the footer rather than inside it.
+   Please don't recolour them -- both brands specify their own usage. */
+.hosts {
+  background: var(--glass-deep);
+  border-top: 1px solid var(--glass-edge);
+  padding-block: 2.5rem;
+}
+.hosts__inner {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: center; gap: clamp(2rem, 6vw, 4.5rem);
+}
+.hosts__item { display: flex; flex-direction: column; align-items: center; gap: .9rem; text-align: center; }
+.hosts__k {
+  font-family: var(--mono); font-size: .64rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ink-faint); margin: 0;
+}
+.hosts img { display: block; }
+.hosts__has { height: 46px; width: auto; }
+.hosts__b2 { height: 58px; width: auto; }
+@media (max-width: 560px) {
+  .hosts__has { height: 34px; }
+  .hosts__b2 { height: 44px; }
+}
 
 /* ---------- Footer ---------- */
 .foot {

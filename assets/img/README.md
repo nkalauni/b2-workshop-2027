@@ -1,27 +1,54 @@
 # Images
 
-Drop files in here with these exact names and the pages pick them up
-automatically. Until then, each slot shows a labelled placeholder — nothing
-breaks, so there is no rush.
+All images here are already sized and compressed for the web. The originals
+live outside the repository — keep them somewhere safe, because these are
+lossy and not worth re-editing.
 
-| File | Used on | Wanted |
+| File | Used on | Source |
 |---|---|---|
-| `hero-biosphere2.jpg` | Home page hero background | Landscape, **2400×1400 or wider**. The glass pyramids work best. It sits behind a dark blue overlay at 50% opacity, so a bright, high-contrast shot survives it. Avoid anything with text or a busy centre — the headline sits over the left half. |
-| `hoshin.jpg` | Home, Theme, Organizers | Portrait, **4:5 ratio**, at least 800×1000. Cropped with `object-fit: cover`, so leave a little headroom. |
-| `biosphere2.jpg` | Venue & Travel | Landscape **16:9**, at least 1600×900. A different shot from the hero. |
+| `hero-biosphere2.jpg` | Home hero | Official B2 photo `201009_B2_exterior_0004` — golden-hour aerial of the whole complex |
+| `biosphere2.jpg` | Venue | Official B2 photo `201009_B2_exterior_0002` — rainforest biome pyramid, cropped to 16:9 |
+| `b2-interior.jpg` | Venue | Official B2 photo `201009_B2_0001` — inside the rainforest biome |
+| `campus-aerial.jpg` | Venue | University of Arizona campus aerial |
+| `hoshin.jpg` | Home, Theme, Organizers | Hoshin's headshot, resized to 900×1350 |
+| `has-lockup.png` | Footer band, every page | Official HAS / College of Science lockup |
+| `b2-logo.png` | Footer band, every page | Biosphere 2 mark, white background knocked out to transparent |
 
-## Also useful, not yet wired in
+## Replacing one
 
-- University of Arizona, HAS department, and Biosphere 2 logos (SVG preferred,
-  otherwise transparent PNG at 2× the display size)
-- The workshop logo and flyer, once Hossein and Maria have them
-- A HAS department or campus photograph for the Venue page
+Keep the same filename and the pages pick it up with no code change. Match the
+aspect ratio or the crop will shift:
 
-## Before committing a photograph
+- hero — wide, 2200px, roughly 1.87:1
+- `biosphere2.jpg` — 16:9
+- `b2-interior.jpg` — roughly 1.7:1
+- `hoshin.jpg` — 2:3 portrait, face high in the frame (CSS crops to 4:5 biased
+  toward the top)
 
-- Confirm you have the right to publish it. B2 and UA Communications both have
-  media libraries with clear licensing; a photo pulled off a search engine does not.
-- Resize first. Nothing here needs to exceed 2400px on its long edge, and
-  large files make the page slow on conference wifi.
-  `sips -Z 2400 photo.jpg` works on macOS with no extra software.
-- Add a credit line if the source requires one — put it in the `figcaption`.
+If you change a photo's dimensions, update the `width` and `height` attributes
+on its `<img>` tag in `tools/build.py` too. They are there to stop the page
+jumping around as images load.
+
+## Adding a new photograph
+
+Resize before committing — nothing needs to exceed 2200px on its long edge:
+
+```sh
+sips -Z 2200 photo.jpg          # macOS, no extra software
+```
+
+Then check the total: the whole site should stay well under 2 MB of images, or
+it gets slow on conference wifi.
+
+## Credit and licensing
+
+The Biosphere 2 photographs are official University of Arizona / Biosphere 2
+images. If B2 or UA Communications require a photographer credit for public
+use, add it to the `figcaption` in `tools/build.py` — the captions are already
+there, so it is a one-line change.
+
+## Not currently used
+
+`ua_block_rgb_3.png` (the standalone UA block A) is not on the site — the HAS
+lockup already contains it, and showing both reads as logo clutter. Kept
+outside the repo in case the flyer needs it.

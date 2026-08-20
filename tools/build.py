@@ -24,8 +24,8 @@ DATES = "May 15–19, 2027"
 VENUE = "Biosphere 2, Arizona"
 EMAIL = "has.reasoning@arizona.edu"
 
-# Set to False and re-run once the site goes public.
-PRIVATE_DRAFT = True
+# Set to True to re-gate the site as a private draft (adds a banner and noindex).
+PRIVATE_DRAFT = False
 
 NAV = [
     ("theme.html", "Theme"),
@@ -55,14 +55,14 @@ DRAFT_BAR = """  <p class="draft-flag">
 
 def head(page_title, description, page_css=""):
     full = page_title + " · " + "B2 Workshop 2027" if page_title else TITLE
+    noindex = '\n<meta name="robots" content="noindex, nofollow">' if PRIVATE_DRAFT else ""
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{full}</title>
-<meta name="description" content="{desc}">
-<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="{desc}">{noindex}
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
@@ -74,7 +74,7 @@ def head(page_title, description, page_css=""):
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-""".format(full=full, title=TITLE, desc=description, extra=page_css)
+""".format(full=full, title=TITLE, desc=description, extra=page_css, noindex=noindex)
 
 
 def masthead(current):
@@ -100,6 +100,21 @@ def masthead(current):
 
 
 FOOTER = """  </main>
+  <section class="hosts">
+    <div class="wrap hosts__inner">
+      <div class="hosts__item">
+        <p class="hosts__k">Hosted by</p>
+        <img class="hosts__has" src="assets/img/has-lockup.png" width="1216" height="235"
+             loading="lazy" decoding="async"
+             alt="University of Arizona College of Science, Department of Hydrology and Atmospheric Sciences.">
+      </div>
+      <div class="hosts__item">
+        <p class="hosts__k">Held at</p>
+        <img class="hosts__b2" src="assets/img/b2-logo.png" width="300" height="321"
+             loading="lazy" decoding="async" alt="Biosphere 2.">
+      </div>
+    </div>
+  </section>
   <footer class="foot">
     <div class="wrap">
       <div class="foot__grid">
@@ -172,7 +187,7 @@ def hero(eyebrow, title_html, sub, honoree=None, buttons=""):
 
 def page_hero(eyebrow, title, sub):
     """Compact hero for interior pages."""
-    return """  <section class="hero">
+    return """  <section class="hero hero--plain">
     <div class="hero__frame" aria-hidden="true"></div>
     {truss}
     <div class="wrap hero__inner" style="padding-block:clamp(3rem,7vw,4.5rem) clamp(2.25rem,5vw,3rem)">
@@ -360,12 +375,12 @@ def render_program():
 #
 # Source: "Potential Oral Presentation Invitees.docx" + the invitation emails.
 #
-# STATUS: every one of these is INVITED, not confirmed. RSVPs were requested by
-# 9 September 2026. As replies arrive, change "invited" to "confirmed" on that
-# person -- the badge and wording update automatically.
+# To remove or replace a speaker, edit the tuple and rebuild. The status field
+# ("invited" / "confirmed") no longer changes the rendering -- everyone is
+# listed as speaking -- but it is kept so the committee can track state here.
 #
-# Deliberately NOT published here: the named alternates ("if unavailable then
-# X") and the "other possibilities" brainstorm list. Being publicly listed as
+# Deliberately NOT published: the named alternates ("if unavailable then X")
+# and the "other possibilities" brainstorm list. Being publicly listed as
 # somebody's fallback is worse than not being listed at all. Those names stay
 # in the organizers' spreadsheet.
 # ---------------------------------------------------------------------------
@@ -449,7 +464,7 @@ SESSIONS = [
 ]
 
 BADGE = {
-    "invited": '<span class="badge badge--invited">Invited</span>',
+    "invited": "",
     "confirmed": "",
     "honoree": '<span class="badge badge--invited">Honoree</span>',
 }
@@ -594,7 +609,9 @@ def build_index():
           </ul>
         </div>
         <figure class="portrait">
-          <p class="portrait__ph">Portrait of<br>Hoshin V. Gupta<br><br>drop a file at<br>assets/img/hoshin.jpg</p>
+          <img src="assets/img/hoshin.jpg" width="900" height="1350" loading="lazy" decoding="async"
+               alt="Portrait of Hoshin V. Gupta.">
+          <figcaption>Professor Hoshin V. Gupta, University of Arizona.</figcaption>
         </figure>
       </div>
     </div>
@@ -650,10 +667,12 @@ def build_index():
   </section>
 """
 
+    preload = ('\n<link rel="preload" as="image" href="assets/img/hero-biosphere2.jpg" '
+               'fetchpriority="high">')
     return page("index.html", "", 
                 "A two-day scientific workshop at Biosphere 2, May 2027, on reasoning as the basis "
                 "for geo-scientific modeling in the age of AI, honoring Professor Hoshin V. Gupta.",
-                h + strip + motivation + sessions + honor + dates + cta)
+                h + strip + motivation + sessions + honor + dates + cta, preload)
 
 
 def build_theme():
@@ -751,7 +770,9 @@ def build_theme():
           </ul>
         </div>
         <figure class="portrait">
-          <p class="portrait__ph">Portrait of<br>Hoshin V. Gupta<br><br>drop a file at<br>assets/img/hoshin.jpg</p>
+          <img src="assets/img/hoshin.jpg" width="900" height="1350" loading="lazy" decoding="async"
+               alt="Portrait of Hoshin V. Gupta.">
+          <figcaption>Professor Hoshin V. Gupta, University of Arizona.</figcaption>
         </figure>
       </div>
     </div>
@@ -791,8 +812,8 @@ def build_program():
         <span class="legend__item">Bars are drawn to scale &mdash; length is real minutes.</span>
       </div>
       <div class="note" style="margin:-1rem 0 2.5rem">
-        Program subject to change. Session titles and timings are settled; the assignment of
-        individual speakers to slots is confirmed as invitations are accepted.
+        Program subject to change. Session titles and timings are settled; individual
+        speakers are assigned to slots as the program is finalised.
       </div>
 """
     body = legend + render_program() + """
@@ -826,10 +847,9 @@ def build_speakers():
     )
     notice = """  <section class="section">
     <div class="wrap">
-      <div class="speaker-notice">
-        <p><strong>These invitations are outstanding.</strong> Everyone listed here has been
-        invited to speak; replies were requested by September 9, 2026. This page will be updated
-        as acceptances arrive, and the list should be treated as provisional until then.</p>
+      <div class="note" style="margin-bottom:3rem">
+        Speakers and session assignments are subject to change. This page is updated as the
+        program is finalised.
       </div>
 """
     body = notice + render_speakers() + """
@@ -875,11 +895,27 @@ def build_venue():
         </div>
         <figure>
           <div class="figure-ph">
-            <p class="figure-ph__label">Photograph of Biosphere 2<br><br>drop a file at<br>assets/img/biosphere2.jpg</p>
+            <img src="assets/img/biosphere2.jpg" width="1600" height="900" loading="lazy" decoding="async"
+                 alt="The stepped glass pyramid of the Biosphere 2 rainforest biome seen from below against a clear blue sky, its white space-frame truss visible through the glazing.">
           </div>
-          <figcaption>Biosphere 2, Oracle, Arizona.</figcaption>
+          <figcaption>The rainforest biome. The white space frame carrying the glazing is the
+          structure the site&rsquo;s own geometry borrows from.</figcaption>
         </figure>
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <figure class="reveal">
+        <div class="figure-ph" style="aspect-ratio:1500/885">
+          <img src="assets/img/b2-interior.jpg" width="1500" height="885" loading="lazy" decoding="async"
+               alt="Inside the Biosphere 2 rainforest biome: dense tropical vegetation under the glass roof, with three people on a walkway for scale.">
+        </div>
+        <figcaption>Inside the rainforest biome. Biosphere 2 encloses five biomes under glass and
+        instruments them as a coupled system &mdash; which is, more or less, the argument the
+        workshop is about.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -912,13 +948,25 @@ def build_venue():
   <section class="section">
     <div class="wrap">
       <p class="eyebrow">Before the workshop</p>
-      <h2 style="max-width:20ch">Saturday and Sunday in Tucson</h2>
-      <p style="margin-top:1.5rem">Participants are welcome to arrive early. Saturday, May 15 is
-      set aside for arrival, visits to the Department of Hydrology &amp; Atmospheric Sciences on
-      the University of Arizona campus, and an informal evening get-together at Hoshin&rsquo;s home.
-      Dinner that evening is on your own.</p>
-      <p>Accommodation in Tucson for the nights before the transfer is arranged by participants.
-      Recommendations will be posted alongside registration.</p>
+      <div class="grid grid--2" style="gap:clamp(2rem,5vw,3.5rem);align-items:start">
+        <figure style="order:2">
+          <div class="figure-ph figure-ph--tall">
+            <img src="assets/img/campus-aerial.jpg" width="1200" height="798" loading="lazy" decoding="async"
+                 alt="Aerial view of the University of Arizona campus at golden hour, red-brick buildings among palms.">
+          </div>
+          <figcaption>The University of Arizona campus in Tucson, where Saturday and Sunday
+          morning are spent before the transfer to Biosphere 2.</figcaption>
+        </figure>
+        <div style="order:1">
+          <h2 style="max-width:20ch">Saturday and Sunday in Tucson</h2>
+          <p style="margin-top:1.5rem">Participants are welcome to arrive early. Saturday, May 15 is
+          set aside for arrival, visits to the Department of Hydrology &amp; Atmospheric Sciences on
+          the University of Arizona campus, and an informal evening get-together at Hoshin&rsquo;s home.
+          Dinner that evening is on your own.</p>
+          <p>Accommodation in Tucson for the nights before the transfer is arranged by participants.
+          Recommendations will be posted alongside registration.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1107,7 +1155,9 @@ def build_organizers():
           retires that spring, remaining engaged with Emeritus status.</p>
         </div>
         <figure class="portrait">
-          <p class="portrait__ph">Portrait of<br>Hoshin V. Gupta<br><br>drop a file at<br>assets/img/hoshin.jpg</p>
+          <img src="assets/img/hoshin.jpg" width="900" height="1350" loading="lazy" decoding="async"
+               alt="Portrait of Hoshin V. Gupta.">
+          <figcaption>Professor Hoshin V. Gupta, University of Arizona.</figcaption>
         </figure>
       </div>
     </div>
