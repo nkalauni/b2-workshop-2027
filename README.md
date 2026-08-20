@@ -19,6 +19,23 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>.
 
+## Checking how it looks
+
+`tools/shots.py` screenshots every page at desktop and phone widths and reports
+any failed requests or JS errors. Optional — it needs playwright, which the site
+itself does not:
+
+```sh
+pip install playwright && playwright install chromium
+python3 -m http.server 8765 &
+python3 tools/shots.py
+```
+
+Note that `position: sticky` elements land in odd places in full-page
+screenshots — the day headers on the Program page will look like they are below
+their slots. That is a capture artifact, not a bug; check in a real browser
+window before chasing it.
+
 ## Editing
 
 Two ways, and they interact — read this bit.
@@ -51,6 +68,7 @@ to run the build will silently undo your work.
 | Colours, type, layout | `assets/css/site.css` |
 | Menu and scroll behaviour | `assets/js/site.js` |
 | Photographs | `assets/img/` — see the README in that folder |
+| Screenshot review | `tools/shots.py` (optional, needs playwright) |
 
 ### Changing the speaker list
 

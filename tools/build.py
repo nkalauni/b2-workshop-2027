@@ -171,10 +171,9 @@ def hero(eyebrow, title_html, sub, honoree=None, buttons=""):
     hon = ""
     if honoree:
         hon = '\n      <p class="hero__honoree">{h}</p>'.format(h=honoree)
-    return """  <section class="hero" style="--hero-img:url('assets/img/hero-biosphere2.jpg')">
+    return """  <section class="hero hero--home">
     <div class="hero__media" aria-hidden="true"></div>
     <div class="hero__frame" aria-hidden="true"></div>
-    {truss}
     <div class="wrap hero__inner">
       <p class="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
@@ -182,7 +181,7 @@ def hero(eyebrow, title_html, sub, honoree=None, buttons=""):
       {buttons}
     </div>
   </section>
-""".format(truss=TRUSS, eyebrow=eyebrow, title=title_html, sub=sub, hon=hon, buttons=buttons)
+""".format(eyebrow=eyebrow, title=title_html, sub=sub, hon=hon, buttons=buttons)
 
 
 def page_hero(eyebrow, title, sub):
@@ -217,10 +216,10 @@ PROGRAM = [
         "name": "Tucson",
         "where": "University of Arizona &amp; Hoshin&rsquo;s home",
         "slots": [
-            ("logistics", "8:00 – 5:00", "Arrival in Tucson, visits to the HAS department", "", 0, 0),
-            ("hvg", "5:00 – 7:00", "Informal get-together with HAS faculty, staff and students",
+            ("logistics", "08:00 – 17:00", "Arrival in Tucson, visits to the HAS department", "", 0, 0),
+            ("hvg", "17:00 – 19:00", "Informal get-together with HAS faculty, staff and students",
              "At Hoshin&rsquo;s home", 120, 0),
-            ("meal", "7:00 – 9:00", "Dinner on your own", "", 0, 0),
+            ("meal", "19:00 – 21:00", "Dinner on your own", "", 0, 0),
         ],
     },
     {
@@ -228,10 +227,10 @@ PROGRAM = [
         "name": "Transfer &amp; arrival",
         "where": "Biosphere 2",
         "slots": [
-            ("logistics", "1:00 – 4:00", "Buses from the University of Arizona to Biosphere 2",
+            ("logistics", "13:00 – 16:00", "Buses from the University of Arizona to Biosphere 2",
              "Departure times confirmed closer to the workshop", 180, 0),
-            ("plain", "4:00 – 6:00", "Tour of Biosphere 2", "", 120, 0),
-            ("meal", "6:00 – 8:00", "Dinner and socializing", "", 0, 0),
+            ("plain", "16:00 – 18:00", "Tour of Biosphere 2", "", 120, 0),
+            ("meal", "18:00 – 20:00", "Dinner and socializing", "", 0, 0),
         ],
     },
     {
@@ -239,26 +238,26 @@ PROGRAM = [
         "name": "Day one",
         "where": "Biosphere 2",
         "slots": [
-            ("meal", "7:30 – 8:30", "Breakfast", "", 0, 0),
-            ("plain", "8:30 – 9:00", "Welcome and goals", "", 30, 0),
-            ("session", "9:00 – 12:00", "Models as Support for Understanding, Reasoning &amp; Discovery",
+            ("meal", "07:30 – 08:30", "Breakfast", "", 0, 0),
+            ("plain", "08:30 – 09:00", "Welcome and goals", "", 30, 0),
+            ("session", "09:00 – 12:00", "Models as Support for Understanding, Reasoning &amp; Discovery",
              "s-models", 0, 0),
-            ("talk", "9:00 – 9:45", "Invited keynote", "s-models", 35, 10),
-            ("break", "9:45 – 10:00", "Coffee break", "s-models", 15, 0),
+            ("talk", "09:00 – 09:45", "Invited keynote", "s-models", 35, 10),
+            ("break", "09:45 – 10:00", "Coffee break", "s-models", 15, 0),
             ("talk", "10:00 – 11:20", "Four invited talks", "s-models|4 × 15 min + 5 min discussion", 60, 20),
             ("talk", "11:20 – 12:00", "Moderated discussion", "s-models", 40, 0),
-            ("meal", "12:00 – 1:00", "Lunch", "", 0, 0),
-            ("plain", "1:00 – 2:00", "Poster session", "", 60, 0),
-            ("session", "2:00 – 4:30", "The Learning Problem &mdash; Reflections on Four Decades of Systems Theory",
+            ("meal", "12:00 – 13:00", "Lunch", "", 0, 0),
+            ("plain", "13:00 – 14:00", "Poster session", "", 60, 0),
+            ("session", "14:00 – 16:30", "The Learning Problem &mdash; Reflections on Four Decades of Systems Theory",
              "s-reflect", 0, 0),
-            ("talk", "2:00 – 4:00", "Four invited talks", "s-reflect|4 × 25 min + 5 min discussion", 100, 20),
-            ("break", "4:00 – 4:30", "Coffee break", "s-reflect", 30, 0),
-            ("session", "4:30 – 5:30", "The Learning Problem &mdash; An Information-Theoretic Perspective on the Future",
+            ("talk", "14:00 – 16:00", "Four invited talks", "s-reflect|4 × 25 min + 5 min discussion", 100, 20),
+            ("break", "16:00 – 16:30", "Coffee break", "s-reflect", 30, 0),
+            ("session", "16:30 – 17:30", "The Learning Problem &mdash; An Information-Theoretic Perspective on the Future",
              "s-hvg", 0, 0),
-            ("hvg", "4:30 – 5:30", "Invited presentation by Hoshin V. Gupta", "s-hvg", 45, 5),
-            ("plain", "5:30 – 6:30", "Poster session", "", 60, 0),
-            ("meal", "6:30 – 8:00", "Dinner", "", 0, 0),
-            ("hvg", "8:00 – 9:30", "Reflections and celebration of Hoshin&rsquo;s career",
+            ("hvg", "16:30 – 17:30", "Invited presentation by Hoshin V. Gupta", "s-hvg", 45, 5),
+            ("plain", "17:30 – 18:30", "Poster session", "", 60, 0),
+            ("meal", "18:30 – 20:00", "Dinner", "", 0, 0),
+            ("hvg", "20:00 – 21:30", "Reflections and celebration of Hoshin&rsquo;s career",
              "s-hvg|An open evening of recollections from colleagues and former students", 90, 0),
         ],
     },
@@ -267,24 +266,24 @@ PROGRAM = [
         "name": "Day two",
         "where": "Biosphere 2",
         "slots": [
-            ("meal", "8:00 – 9:00", "Breakfast", "", 0, 0),
-            ("session", "9:00 – 12:00", "Models as Support for Understanding, Reasoning &amp; Discovery",
+            ("meal", "08:00 – 09:00", "Breakfast", "", 0, 0),
+            ("session", "09:00 – 12:00", "Models as Support for Understanding, Reasoning &amp; Discovery",
              "s-models", 0, 0),
-            ("talk", "9:00 – 9:45", "Invited keynote", "s-models", 35, 10),
-            ("break", "9:45 – 10:00", "Coffee break", "s-models", 15, 0),
+            ("talk", "09:00 – 09:45", "Invited keynote", "s-models", 35, 10),
+            ("break", "09:45 – 10:00", "Coffee break", "s-models", 15, 0),
             ("talk", "10:00 – 11:20", "Four invited talks", "s-models|4 × 15 min + 5 min discussion", 60, 20),
             ("talk", "11:20 – 12:00", "Moderated discussion", "s-models", 40, 0),
-            ("meal", "12:00 – 1:00", "Lunch", "", 0, 0),
-            ("plain", "1:00 – 2:00", "Poster session", "", 60, 0),
-            ("session", "2:00 – 5:30", "The Learning Problem &mdash; Looking to the Future", "s-future", 0, 0),
-            ("talk", "2:00 – 2:45", "Invited keynote", "s-future", 35, 10),
-            ("break", "2:45 – 3:00", "Coffee break", "s-future", 15, 0),
-            ("talk", "3:00 – 4:20", "Four invited talks", "s-future|4 × 15 min + 5 min discussion", 60, 20),
-            ("break", "4:20 – 4:30", "Coffee break", "s-future", 10, 0),
-            ("talk", "4:30 – 5:30", "Moderated discussion", "s-future", 60, 0),
-            ("plain", "5:30 – 6:30", "Poster session", "", 60, 0),
-            ("meal", "6:30 – 8:00", "Dinner", "", 0, 0),
-            ("plain", "8:00 – 9:00", "Extended discussion &mdash; future planning", "", 60, 0),
+            ("meal", "12:00 – 13:00", "Lunch", "", 0, 0),
+            ("plain", "13:00 – 14:00", "Poster session", "", 60, 0),
+            ("session", "14:00 – 17:30", "The Learning Problem &mdash; Looking to the Future", "s-future", 0, 0),
+            ("talk", "14:00 – 14:45", "Invited keynote", "s-future", 35, 10),
+            ("break", "14:45 – 15:00", "Coffee break", "s-future", 15, 0),
+            ("talk", "15:00 – 16:20", "Four invited talks", "s-future|4 × 15 min + 5 min discussion", 60, 20),
+            ("break", "16:20 – 16:30", "Coffee break", "s-future", 10, 0),
+            ("talk", "16:30 – 17:30", "Moderated discussion", "s-future", 60, 0),
+            ("plain", "17:30 – 18:30", "Poster session", "", 60, 0),
+            ("meal", "18:30 – 20:00", "Dinner", "", 0, 0),
+            ("plain", "20:00 – 21:00", "Extended discussion &mdash; future planning", "", 60, 0),
         ],
     },
     {
@@ -292,8 +291,8 @@ PROGRAM = [
         "name": "Departure",
         "where": "Biosphere 2 &rarr; Tucson",
         "slots": [
-            ("meal", "8:00 – 9:00", "Breakfast", "", 0, 0),
-            ("logistics", "9:00 – 11:00", "Buses from Biosphere 2 to the University of Arizona", "", 120, 0),
+            ("meal", "08:00 – 09:00", "Breakfast", "", 0, 0),
+            ("logistics", "09:00 – 11:00", "Buses from Biosphere 2 to the University of Arizona", "", 120, 0),
         ],
     },
 ]
@@ -498,7 +497,7 @@ def render_speakers():
 
 def build_index():
     h = hero(
-        eyebrow="Hydrology &amp; Atmospheric Sciences &middot; University of Arizona",
+        eyebrow="Hydrology &amp; Atmospheric Sciences",
         title_html="Reasoning as the Basis for Geo-Scientific Modeling <em>in the Age of AI</em>",
         sub="A two-day scientific workshop at Biosphere 2, examining how physics, domain "
             "understanding, information theory and systems theory can be integrated with "
@@ -598,11 +597,11 @@ def build_index():
           schedule are set aside for the occasion.</p>
           <ul class="honor__events">
             <li>
-              <time datetime="2027-05-15T17:00">Sat May 15, 5:00 pm</time>
+              <time datetime="2027-05-15T17:00">Sat May 15, 17:00</time>
               <span>An informal get-together with HAS faculty, staff and students at Hoshin&rsquo;s home.</span>
             </li>
             <li>
-              <time datetime="2027-05-17T20:00">Mon May 17, 8:00 pm</time>
+              <time datetime="2027-05-17T20:00">Mon May 17, 20:00</time>
               <span>An evening at Biosphere 2 to reminisce about Hoshin&rsquo;s career, open to
               colleagues and former students.</span>
             </li>
@@ -925,13 +924,13 @@ def build_venue():
       <h2 style="max-width:18ch">Buses run from campus in both directions</h2>
       <div class="grid grid--2" style="margin-top:2.5rem">
         <article class="card">
-          <p class="card__tag">Sunday, May 16 &middot; 1:00 – 4:00 pm</p>
+          <p class="card__tag">Sunday, May 16 &middot; 13:00 – 16:00</p>
           <h3>University of Arizona &rarr; Biosphere 2</h3>
           <p>Chartered buses carry participants from campus to B2 on Sunday afternoon.
           Exact pickup points and departure times will be confirmed closer to the workshop.</p>
         </article>
         <article class="card">
-          <p class="card__tag">Wednesday, May 19 &middot; 9:00 – 11:00 am</p>
+          <p class="card__tag">Wednesday, May 19 &middot; 09:00 – 11:00</p>
           <h3>Biosphere 2 &rarr; University of Arizona</h3>
           <p>Return buses run Wednesday morning after breakfast. Plan departing flights with
           the transfer time in mind.</p>
