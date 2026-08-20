@@ -970,10 +970,10 @@ def build_venue():
   <section class="cta">
     <div class="wrap wrap--narrow">
       <p class="eyebrow">Staying on site</p>
-      <h2>Participants stay on site at Biosphere 2.</h2>
-      <p>A registration fee will be charged to cover logistical expenses, including accommodation
-      and meals at Biosphere 2. What the fee covers and what participants pay directly will be
-      confirmed when registration opens.</p>
+      <h2>Accommodation and meals at Biosphere 2 are covered by the registration fee.</h2>
+      <p>Participants stay on site for the three nights of the workshop, arriving Sunday afternoon
+      and leaving after breakfast on Wednesday. The fee covers logistical expenses including
+      lodging and meals at B2; the amount will be published when registration opens.</p>
       <div class="btn-row"><a class="btn btn--ghost" href="register.html">Registration</a></div>
     </div>
   </section>
@@ -1041,8 +1041,8 @@ def build_register():
         <article class="card">
           <p class="card__tag">Fee</p>
           <h3>A registration fee will be charged</h3>
-          <p>It goes toward logistical expenses including accommodation and meals at Biosphere 2.
-          The amount, and exactly what it covers, will be published when registration opens.</p>
+          <p>It covers logistical expenses including accommodation and meals at Biosphere 2.
+          The amount will be published when registration opens.</p>
         </article>
         <article class="card">
           <p class="card__tag">Presenting</p>

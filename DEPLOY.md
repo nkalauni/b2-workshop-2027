@@ -68,5 +68,4 @@ Access does it on the free tier, with email one-time PINs.
       contact address on every page
 - [ ] Registration page still says "date to be announced"
 - [ ] Abstract submission system not chosen, so nothing is linked
-- [ ] Photographer credits in captions, if B2 requires them
 - [ ] Workshop logo and flyer, once they exist

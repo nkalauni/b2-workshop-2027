@@ -51,13 +51,6 @@ left a visible halo.
 If you ever get a vector version (SVG or EPS) from Biosphere 2, use that
 instead — it will be sharper at every size and a fraction of the file size.
 
-## Credit and licensing
-
-The Biosphere 2 photographs are official University of Arizona / Biosphere 2
-images. If B2 or UA Communications require a photographer credit for public
-use, add it to the `figcaption` in `tools/build.py` — the captions are already
-there, so it is a one-line change.
-
 ## Not currently used
 
 `ua_block_rgb_3.png` (the standalone UA block A) is not on the site — the HAS

@@ -31,11 +31,6 @@ python3 -m http.server 8765 &
 python3 tools/shots.py
 ```
 
-Note that `position: sticky` elements land in odd places in full-page
-screenshots — the day headers on the Program page will look like they are below
-their slots. That is a capture artifact, not a bug; check in a real browser
-window before chasing it.
-
 ## Editing
 
 Two ways, and they interact — read this bit.
@@ -100,20 +95,6 @@ being listed at all.
 - The site works with JavaScript disabled and prints legibly — the Program page
   makes a decent handout on paper.
 
-## Sourcing the copy
-
-Everything on the site should be traceable to the planning documents or the
-18 Aug 2026 invitation emails. If you add copy, keep that true — it is
-surprisingly easy to turn a note about one thing into a claim about another.
-A worked example: `Notes.docx` says "Nabin Kalauni (will chair El Día 2027)",
-which is a note about one student's role. It does not say the workshop is
-connected to El Día, and it is not — El Día is in March, this is in May.
-
-Where the documents disagree, prefer the newer one and say less rather than
-more. The May 2026 notes say general participants pay their own lodging; the
-August 2026 invitation says the registration fee covers accommodation and food
-at B2. The site does not assert either, because that has not been settled.
-
 ## Not in this repository, on purpose
 
 The planning documents in the parent folder — the invitee spreadsheet in
@@ -126,4 +107,3 @@ that way.
 - Registration dates and fee are unset, pending funding decisions
 - Abstract submission system not yet chosen, so nothing is linked
 - Workshop logo and flyer (Hossein and Maria) not yet incorporated
-- Photographer credits not added to captions — check whether B2 requires them
