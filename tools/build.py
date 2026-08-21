@@ -607,7 +607,7 @@ def build_index():
           </ul>
         </div>
         <figure class="portrait">
-          <img src="assets/img/hoshin.jpg" width="900" height="1350" loading="lazy" decoding="async"
+          <img src="assets/img/hoshin.jpg" width="900" height="1009" loading="lazy" decoding="async"
                alt="Portrait of Hoshin V. Gupta.">
           <figcaption>Professor Hoshin V. Gupta, University of Arizona.</figcaption>
         </figure>
@@ -754,7 +754,7 @@ def build_theme():
           </ul>
         </div>
         <figure class="portrait">
-          <img src="assets/img/hoshin.jpg" width="900" height="1350" loading="lazy" decoding="async"
+          <img src="assets/img/hoshin.jpg" width="900" height="1009" loading="lazy" decoding="async"
                alt="Portrait of Hoshin V. Gupta.">
           <figcaption>Professor Hoshin V. Gupta, University of Arizona.</figcaption>
         </figure>
@@ -1117,7 +1117,7 @@ def build_organizers():
           retires that spring, remaining engaged with Emeritus status.</p>
         </div>
         <figure class="portrait">
-          <img src="assets/img/hoshin.jpg" width="900" height="1350" loading="lazy" decoding="async"
+          <img src="assets/img/hoshin.jpg" width="900" height="1009" loading="lazy" decoding="async"
                alt="Portrait of Hoshin V. Gupta.">
           <figcaption>Professor Hoshin V. Gupta, University of Arizona.</figcaption>
         </figure>

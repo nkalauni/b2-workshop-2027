@@ -10,7 +10,7 @@ lossy and not worth re-editing.
 | `biosphere2.jpg` | Venue | Official B2 photo `201009_B2_exterior_0002` — rainforest biome pyramid, cropped to 16:9 |
 | `b2-interior.jpg` | Venue | Official B2 photo `201009_B2_0001` — inside the rainforest biome |
 | `campus-aerial.jpg` | Venue | University of Arizona campus aerial |
-| `hoshin.jpg` | Home, Theme, Organizers | Hoshin's headshot, resized to 900×1350 |
+| `hoshin.jpg` | Home, Theme, Organizers | Hoshin's portrait (the 2026 outdoor one), resized to 900×1009 |
 | `has-lockup.png` | Footer band, every page | Official HAS / College of Science lockup |
 | `b2-logo.png` | Footer band, every page | Official Biosphere 2 / University of Arizona wordmark lockup, supplied as JPEG; white background knocked out to transparent |
 
@@ -22,8 +22,10 @@ aspect ratio or the crop will shift:
 - hero — wide, 2200px, roughly 1.87:1
 - `biosphere2.jpg` — 16:9
 - `b2-interior.jpg` — roughly 1.7:1
-- `hoshin.jpg` — 2:3 portrait, face high in the frame (CSS crops to 4:5 biased
-  toward the top)
+- `hoshin.jpg` — portrait, roughly 9:10. The CSS container is 4:5, so a source
+  wider than that gets cropped at the sides and not the top; a much taller
+  source would crop vertically instead and need `object-position` in
+  `.portrait img` adjusted
 
 If you change a photo's dimensions, update the `width` and `height` attributes
 on its `<img>` tag in `tools/build.py` too. They are there to stop the page
