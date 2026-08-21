@@ -374,14 +374,16 @@ def render_program():
 #
 # Source: "Potential Oral Presentation Invitees.docx" + the invitation emails.
 #
-# To remove or replace a speaker, edit the tuple and rebuild. The status field
-# ("invited" / "confirmed") no longer changes the rendering -- everyone is
-# listed as speaking -- but it is kept so the committee can track state here.
+# Speaker names and affiliations are deliberately NOT in this file. The
+# repository is public, so anything here is published. Names live only in
+# "List of People to Invite/Speakers_B2Workshop.xlsx", outside the repo.
 #
-# Deliberately NOT published: the named alternates ("if unavailable then X")
-# and the "other possibilities" brainstorm list. Being publicly listed as
-# somebody's fallback is worse than not being listed at all. Those names stay
-# in the organizers' spreadsheet.
+# Hoshin V. Gupta is named because he is the honoree and his talk is not in
+# doubt. Everyone else reads "TBD" until they have accepted; to add someone,
+# replace their "TBD" pair with the name and affiliation.
+#
+# Deliberately NOT published either: the named alternates ("if unavailable then
+# X") and the "other possibilities" brainstorm list.
 # ---------------------------------------------------------------------------
 
 SESSIONS = [
@@ -393,12 +395,12 @@ SESSIONS = [
                  "prediction machines &mdash; and what misspecification, diagnostics and "
                  "process reasoning demand of them.",
         "people": [
-            ("Thorsten Wagener", "University of Potsdam, Germany", "Keynote", "Models and reasoning", "invited"),
-            ("Jasper Vrugt", "University of California, Irvine", "Talk", "Dealing with misspecification", "invited"),
-            ("Gab Abramowitz", "UNSW Sydney, Australia", "Talk", "Models and reasoning", "invited"),
-            ("Uwe Ehret", "Karlsruhe Institute of Technology, Germany", "Talk",
+            ("TBD", "TBD", "Keynote", "Models and reasoning", "invited"),
+            ("TBD", "TBD", "Talk", "Dealing with misspecification", "invited"),
+            ("TBD", "TBD", "Talk", "Models and reasoning", "invited"),
+            ("TBD", "TBD", "Talk",
              "Models and reasoning &middot; bridging process-based and machine learning", "invited"),
-            ("Saman Razavi", "University of Saskatchewan, Canada", "Talk", "Models and reasoning", "invited"),
+            ("TBD", "TBD", "Talk", "Models and reasoning", "invited"),
         ],
     },
     {
@@ -408,10 +410,10 @@ SESSIONS = [
         "blurb": "A long view of what systems theory taught hydrology about learning from data, "
                  "from the people who did the work.",
         "people": [
-            ("Soroosh Sorooshian", "University of California, Irvine", "Talk", "Reflections", "invited"),
-            ("Qingyun Duan", "Hohai University, China", "Talk", "Reflections", "invited"),
-            ("Harald Kling", "BOKU, Austria", "Talk", "Reflections", "invited"),
-            ("Grey Nearing", "Google", "Talk", "Reflections", "invited"),
+            ("TBD", "TBD", "Talk", "Reflections", "invited"),
+            ("TBD", "TBD", "Talk", "Reflections", "invited"),
+            ("TBD", "TBD", "Talk", "Reflections", "invited"),
+            ("TBD", "TBD", "Talk", "Reflections", "invited"),
         ],
     },
     {
@@ -431,14 +433,14 @@ SESSIONS = [
         "blurb": "The session continues, with a focus on bridging process-based modeling and "
                  "machine learning in practice.",
         "people": [
-            ("Martyn Clark", "University of Calgary, Canada", "Keynote", "Models and reasoning", "invited"),
-            ("Laura Condon", "University of Arizona", "Talk",
+            ("TBD", "TBD", "Keynote", "Models and reasoning", "invited"),
+            ("TBD", "TBD", "Talk",
              "Models and reasoning &middot; bridging process-based and machine learning", "invited"),
-            ("Bo Guo", "University of Arizona", "Talk",
+            ("TBD", "TBD", "Talk",
              "Models and reasoning &middot; bridging process-based and machine learning", "invited"),
-            ("Jonathan Frame", "University of Alabama", "Talk",
+            ("TBD", "TBD", "Talk",
              "Bridging process-based and machine learning", "invited"),
-            ("Andrew Bennett", "University of Arizona", "Talk",
+            ("TBD", "TBD", "Talk",
              "Bridging process-based and machine learning", "invited"),
         ],
     },
@@ -449,14 +451,14 @@ SESSIONS = [
         "blurb": "Equation discovery, new architectures, causality and agentic methods &mdash; "
                  "what the next decade of geo-scientific model development might actually look like.",
         "people": [
-            ("Karsten Schulz", "BOKU, Austria", "Keynote", "Equation generation", "invited"),
-            ("Hernán Moreno", "University of Texas at El Paso", "Talk",
+            ("TBD", "TBD", "Keynote", "Equation generation", "invited"),
+            ("TBD", "TBD", "Talk",
              "Kolmogorov–Arnold networks &middot; NEAT", "invited"),
-            ("Yang Yang", "University of Massachusetts Boston", "Talk",
+            ("TBD", "TBD", "Talk",
              "Latent representation &middot; contrastive learning", "invited"),
-            ("Yang Hong", "University of Oklahoma", "Talk",
+            ("TBD", "TBD", "Talk",
              "Agentic support for model development", "invited"),
-            ("Praveen Kumar", "University of Illinois", "Talk",
+            ("TBD", "TBD", "Talk",
              "Information theory &middot; causality &middot; agentic methods", "invited"),
         ],
     },
@@ -827,8 +829,8 @@ def build_speakers():
     notice = """  <section class="section">
     <div class="wrap">
       <div class="note" style="margin-bottom:3rem">
-        Speakers and session assignments are subject to change. This page is updated as the
-        program is finalised.
+        Invited speakers will be listed here once invitations have been confirmed. The session
+        structure and timings below are settled.
       </div>
 """
     body = notice + render_speakers() + """
