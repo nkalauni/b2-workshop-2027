@@ -593,6 +593,11 @@ def build_index():
               <span>An informal get-together with HAS faculty, staff and students at Hoshin&rsquo;s home.</span>
             </li>
             <li>
+              <time datetime="2027-05-17T16:30">Mon May 17, 16:30</time>
+              <span>Hoshin&rsquo;s own presentation: <em>The Learning Problem &mdash; An
+              Information-Theoretic Perspective on the Future</em>.</span>
+            </li>
+            <li>
               <time datetime="2027-05-17T20:00">Mon May 17, 20:00</time>
               <span>An evening at Biosphere 2 to reminisce about Hoshin&rsquo;s career.</span>
             </li>
@@ -735,18 +740,18 @@ def build_theme():
           pressing on the field.</p>
           <ul class="honor__events">
             <li>
-              <time datetime="2027-05-15T17:00">Sat May 15</time>
+              <time datetime="2027-05-15T17:00">Sat May 15, 17:00</time>
               <span>Informal pre-workshop get-together at Hoshin&rsquo;s home, with HAS faculty,
               staff and students.</span>
             </li>
             <li>
-              <time datetime="2027-05-17T20:00">Mon May 17</time>
-              <span>An evening at Biosphere 2 to reminisce about Hoshin&rsquo;s career.</span>
-            </li>
-            <li>
-              <time datetime="2027-05-17T16:30">Mon May 17</time>
+              <time datetime="2027-05-17T16:30">Mon May 17, 16:30</time>
               <span>Hoshin&rsquo;s own presentation: <em>The Learning Problem &mdash; An
               Information-Theoretic Perspective on the Future</em>.</span>
+            </li>
+            <li>
+              <time datetime="2027-05-17T20:00">Mon May 17, 20:00</time>
+              <span>An evening at Biosphere 2 to reminisce about Hoshin&rsquo;s career.</span>
             </li>
           </ul>
         </div>
