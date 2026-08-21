@@ -22,7 +22,8 @@ TITLE = "Reasoning as the Basis for Geo-Scientific Modeling in the Age of AI"
 SHORT = "Reasoning &amp; Geo-Scientific Modeling"
 DATES = "May 15–19, 2027"
 VENUE = "Biosphere 2, Arizona"
-EMAIL = "has.reasoning@arizona.edu"
+# Hyphen, not a dot: UA does not allow "." in the local part, per Bo (21 Aug 2026).
+EMAIL = "has-reasoning@arizona.edu"
 
 # Set to True to re-gate the site as a private draft (adds a banner and noindex).
 PRIVATE_DRAFT = False
@@ -972,8 +973,8 @@ def build_register():
         <div>
           <p class="eyebrow">Status</p>
           <h2>Registration is not yet open.</h2>
-          <p class="lede">The opening date will be announced here and by email to the workshop
-          mailing list.</p>
+          <p class="lede">Additional information about abstract submission and registration will
+          be posted soon.</p>
           <div class="btn-row">
             <a class="btn" href="mailto:{email}?subject=Reasoning%20Workshop%202027%20%E2%80%94%20mailing%20list">
               Ask to join the mailing list</a>
@@ -1032,8 +1033,6 @@ def build_register():
       <h2>Every participant presents</h2>
       <p>Four hour-long poster sessions are scheduled across Monday and Tuesday, two on
       each day.</p>
-      <p>An abstract submission system is being set up. Details will be announced with
-      registration.</p>
       <div class="note" style="margin-top:2rem">
         Sessions may be recorded and published. Registration will include a permission waiver
         covering recording and publication; you will be able to decline it.
