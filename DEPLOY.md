@@ -1,7 +1,7 @@
 # Deploying
 
 The site is public, published from this repository by GitHub Pages at
-**<https://nkalauni.github.io/b2-workshop-2027/>**.
+**<https://nkalauni.github.io/reasoning-workshop-2027/>**.
 
 There is no build server and no Actions workflow. GitHub serves the `.html`
 files in the repository root exactly as they are, so:
@@ -49,7 +49,7 @@ which is worth having before the URL goes out on a flyer.
 The site currently lives under a personal account. Transferring it later
 (**Settings → General → Transfer ownership**) keeps all history, and GitHub
 redirects the old URL. If you transfer, the Pages URL changes to
-`https://<org>.github.io/b2-workshop-2027/` unless a custom domain is set —
+`https://<org>.github.io/reasoning-workshop-2027/` unless a custom domain is set —
 another reason to sort the domain out first.
 
 ## Taking the site private again

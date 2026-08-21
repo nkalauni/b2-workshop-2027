@@ -54,7 +54,7 @@ DRAFT_BAR = """  <p class="draft-flag">
 
 
 def head(page_title, description, page_css=""):
-    full = page_title + " · " + "B2 Workshop 2027" if page_title else TITLE
+    full = page_title + " · " + "Reasoning Workshop 2027" if page_title else TITLE
     noindex = '\n<meta name="robots" content="noindex, nofollow">' if PRIVATE_DRAFT else ""
     return """<!DOCTYPE html>
 <html lang="en">

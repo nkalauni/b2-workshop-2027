@@ -5,7 +5,7 @@ Professor Hoshin V. Gupta.
 
 Hosted by the Department of Hydrology & Atmospheric Sciences, University of Arizona.
 
-**Live at <https://nkalauni.github.io/b2-workshop-2027/>** — published from
+**Live at <https://nkalauni.github.io/reasoning-workshop-2027/>** — published from
 `main` via GitHub Pages. Pushing to `main` redeploys within a minute or two.
 See [DEPLOY.md](DEPLOY.md).
 
