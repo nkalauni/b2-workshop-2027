@@ -64,6 +64,7 @@ to run the build will silently undo your work.
 | Menu and scroll behaviour | `assets/js/site.js` |
 | Photographs | `assets/img/` — see the README in that folder |
 | Screenshot review | `tools/shots.py` (optional, needs playwright) |
+| Verbatim-text check | `tools/check_verbatim.py` |
 
 ### Changing the speaker list
 
@@ -75,6 +76,19 @@ kept so the committee can track who has actually replied.
 Named alternates and the "other possibilities" brainstorm list are deliberately
 not on the site. Being publicly listed as somebody's fallback is worse than not
 being listed at all.
+
+## Quoted text
+
+The Motivation and Workshop Focus paragraphs on the Home and Theme pages are
+copied word for word from the workshop invitation. Keep them that way — don't
+paraphrase, re-punctuate, or add sentences to them.
+
+```sh
+python3 tools/check_verbatim.py
+```
+
+diffs those paragraphs against the invitation document and exits non-zero if
+they have drifted.
 
 ## Design notes for whoever picks this up
 
