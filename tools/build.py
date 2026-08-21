@@ -228,7 +228,7 @@ PROGRAM = [
         "where": "Biosphere 2",
         "slots": [
             ("logistics", "13:00 – 16:00", "Buses from the University of Arizona to Biosphere 2",
-             "Departure times confirmed closer to the workshop", 180, 0),
+             "", 180, 0),
             ("plain", "16:00 – 18:00", "Tour of Biosphere 2", "", 120, 0),
             ("meal", "18:00 – 20:00", "Dinner and socializing", "", 0, 0),
         ],
@@ -906,8 +906,7 @@ def build_venue():
         <article class="card">
           <p class="card__tag">Sunday, May 16 &middot; 13:00 – 16:00</p>
           <h3>University of Arizona &rarr; Biosphere 2</h3>
-          <p>Chartered buses carry participants from campus to B2 on Sunday afternoon.
-          Exact pickup points and departure times will be confirmed closer to the workshop.</p>
+          <p>Chartered buses carry participants from campus to B2 on Sunday afternoon.</p>
         </article>
         <article class="card">
           <p class="card__tag">Wednesday, May 19 &middot; 09:00 – 11:00</p>
