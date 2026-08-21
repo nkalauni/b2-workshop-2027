@@ -65,6 +65,7 @@ to run the build will silently undo your work.
 | Photographs | `assets/img/` — see the README in that folder |
 | Screenshot review | `tools/shots.py` (optional, needs playwright) |
 | Verbatim-text check | `tools/check_verbatim.py` |
+| Forbidden-copy check | `tools/check_forbidden.py` |
 
 ### Changing the speaker list
 
@@ -89,6 +90,14 @@ python3 tools/check_verbatim.py
 
 diffs those paragraphs against the invitation document and exits non-zero if
 they have drifted.
+
+```sh
+python3 tools/check_forbidden.py
+```
+
+fails if copy that must not be public has crept back in — anything about
+funding or grants, and a few phrasings that were cut for being filler.
+Registration timing is stated as unopened, never explained.
 
 ## Design notes for whoever picks this up
 
