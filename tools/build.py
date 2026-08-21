@@ -539,9 +539,9 @@ def build_index():
       <p class="lede">While recent advances in artificial intelligence (AI) are transforming the
       Geosciences at an unprecedented rate, these developments are raising fundamental questions
       about the critical roles of reasoning, process understanding, counterfactual analysis and
-      physical consistency in geo-scientific investigation and model development.</p>
-      <p>Such concerns become even more pressing given the clear observational evidence that
-      geo-scientific systems can no longer be treated as stationary.</p>
+      physical consistency in geo-scientific investigation and model development. Such concerns
+      become even more pressing given the clear observational evidence that geo-scientific systems
+      can no longer be treated as stationary.</p>
       <div class="btn-row"><a class="btn btn--light" href="theme.html">The full theme</a></div>
     </div>
   </section>
@@ -682,9 +682,9 @@ def build_theme():
       <p class="lede">While recent advances in artificial intelligence (AI) are transforming the
       Geosciences at an unprecedented rate, these developments are raising fundamental questions
       about the critical roles of reasoning, process understanding, counterfactual analysis and
-      physical consistency in geo-scientific investigation and model development.</p>
-      <p>Such concerns become even more pressing given the clear observational evidence that
-      geo-scientific systems can no longer be treated as stationary.</p>
+      physical consistency in geo-scientific investigation and model development. Such concerns
+      become even more pressing given the clear observational evidence that geo-scientific systems
+      can no longer be treated as stationary.</p>
     </div>
   </section>
 
@@ -694,8 +694,8 @@ def build_theme():
       <p class="lede">This workshop will examine how reasoning-based approaches, rooted in physics,
       domain understanding (including hydrology and atmospheric science), information theory, and
       systems theory can be suitably integrated with modern AI methods to advance geoscientific
-      modeling.</p>
-      <p>It therefore aims to initiate a dialog aimed at addressing these and related issues.</p>
+      modeling. It therefore aims to initiate a dialog aimed at addressing these and related
+      issues.</p>
     </div>
   </section>
 
