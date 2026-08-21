@@ -186,16 +186,16 @@ def hero(eyebrow, title_html, sub, honoree=None, buttons=""):
 
 def page_hero(eyebrow, title, sub):
     """Compact hero for interior pages."""
+    brow = '<p class="eyebrow">%s</p>\n      ' % eyebrow if eyebrow else ""
     return """  <section class="hero hero--plain">
     <div class="hero__frame" aria-hidden="true"></div>
     {truss}
     <div class="wrap hero__inner" style="padding-block:clamp(3rem,7vw,4.5rem) clamp(2.25rem,5vw,3rem)">
-      <p class="eyebrow">{eyebrow}</p>
-      <h1 style="font-size:clamp(2rem,4.2vw,3.2rem);max-width:20ch">{title}</h1>
+      {brow}<h1 style="font-size:clamp(2rem,4.2vw,3.2rem);max-width:20ch">{title}</h1>
       <p class="hero__sub" style="font-size:clamp(1rem,1.7vw,1.2rem)">{sub}</p>
     </div>
   </section>
-""".format(truss=TRUSS, eyebrow=eyebrow, title=title, sub=sub)
+""".format(truss=TRUSS, brow=brow, title=title, sub=sub)
 
 
 # ---------------------------------------------------------------------------
@@ -779,8 +779,8 @@ def build_theme():
 
 def build_program():
     h = page_hero(
+        "",
         "Program",
-        "Five days, two of them science",
         "Arrival and a tour on the weekend, two full days of talks, posters and discussion "
         "at Biosphere 2, and departure Wednesday morning.",
     )
