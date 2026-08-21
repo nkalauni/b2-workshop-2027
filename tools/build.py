@@ -872,19 +872,15 @@ def build_venue():
           <p class="lede">Biosphere 2 is a University of Arizona research facility: a sealed
           glass-and-steel structure enclosing several biomes, built to study Earth systems as
           coupled wholes.</p>
-          <p>It is an unusually appropriate place to argue about what a model of an Earth system
-          is for. Participants stay on site, and a guided tour of the facility is scheduled for
+          <p>Participants stay on site, and a guided tour of the facility is scheduled for
           Sunday afternoon before the science begins.</p>
-          <p>Because everyone is housed and fed in one place, the workshop keeps its participants
-          together across meals and evenings &mdash; which is much of the point.</p>
         </div>
         <figure>
           <div class="figure-ph">
             <img src="assets/img/biosphere2.jpg" width="1600" height="900" loading="lazy" decoding="async"
                  alt="The stepped glass pyramid of the Biosphere 2 rainforest biome seen from below against a clear blue sky, its white space-frame truss visible through the glazing.">
           </div>
-          <figcaption>The rainforest biome. The white space frame carrying the glazing is the
-          structure the site&rsquo;s own geometry borrows from.</figcaption>
+          <figcaption>The glass pyramid enclosing the rainforest biome.</figcaption>
         </figure>
       </div>
     </div>
@@ -897,9 +893,7 @@ def build_venue():
           <img src="assets/img/b2-interior.jpg" width="1500" height="885" loading="lazy" decoding="async"
                alt="Inside the Biosphere 2 rainforest biome: dense tropical vegetation under the glass roof, with three people on a walkway for scale.">
         </div>
-        <figcaption>Inside the rainforest biome. Biosphere 2 encloses five biomes under glass and
-        instruments them as a coupled system &mdash; which is, more or less, the argument the
-        workshop is about.</figcaption>
+        <figcaption>Inside the rainforest biome, one of five enclosed under glass.</figcaption>
       </figure>
     </div>
   </section>
@@ -939,8 +933,7 @@ def build_venue():
             <img src="assets/img/campus-aerial.jpg" width="1200" height="798" loading="lazy" decoding="async"
                  alt="Aerial view of the University of Arizona campus at golden hour, red-brick buildings among palms.">
           </div>
-          <figcaption>The University of Arizona campus in Tucson, where Saturday and Sunday
-          morning are spent before the transfer to Biosphere 2.</figcaption>
+          <figcaption>The University of Arizona campus in Tucson.</figcaption>
         </figure>
         <div style="order:1">
           <h2 style="max-width:20ch">Saturday and Sunday in Tucson</h2>
@@ -1046,8 +1039,8 @@ def build_register():
     <div class="wrap wrap--narrow">
       <p class="eyebrow">Posters</p>
       <h2>Every participant presents</h2>
-      <p>The poster sessions are not a side activity. Four hour-long sessions are scheduled across
-      Monday and Tuesday, and they are a large part of how the workshop is meant to work.</p>
+      <p>Four hour-long poster sessions are scheduled across Monday and Tuesday, two on
+      each day.</p>
       <p>An abstract submission system is being set up. Submission opens alongside registration,
       and the deadline will be announced with it.</p>
       <div class="note" style="margin-top:2rem">
