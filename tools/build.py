@@ -701,9 +701,9 @@ def build_theme():
       domain understanding (including hydrology and atmospheric science), information theory
       and systems theory &mdash; can be suitably integrated with modern AI methods to advance
       geoscientific modeling.</p>
-      <p>It is deliberately a dialogue rather than a proceedings. The schedule allots substantial
-      time to moderated discussion and to posters, and the two evening sessions are reserved for
-      open conversation and for planning what comes after.</p>
+      <p>It aims to initiate a dialogue rather than produce a proceedings. The schedule allots
+      substantial time to moderated discussion and to posters, and Tuesday evening is set aside
+      for planning what comes after.</p>
       <div class="note" style="margin-top:2rem">
         The workshop runs as a single track. Every participant is in the same room for every talk,
         which is what makes the discussion periods worth protecting.
