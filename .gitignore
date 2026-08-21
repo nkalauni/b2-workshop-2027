@@ -13,3 +13,7 @@ shots/
 
 # Local working notes, not part of the site
 CLAUDE.md
+
+# Local checks, not part of the site
+tools/check_verbatim.py
+tools/check_forbidden.py
