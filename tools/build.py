@@ -514,7 +514,7 @@ def build_index():
       <div class="strip__grid">
         <div class="strip__cell">
           <p class="strip__k">Dates</p>
-          <p class="strip__v">May 15 – 19, 2027<small>Science on Monday 17 and Tuesday 18</small></p>
+          <p class="strip__v">May 15 – 19, 2027<small>Workshop on Monday 17 and Tuesday 18</small></p>
         </div>
         <div class="strip__cell">
           <p class="strip__k">Venue</p>
@@ -624,17 +624,12 @@ def build_index():
           Replies to the invitation emails are due.</div>
         </li>
         <li>
-          <time datetime="2026-11">Fall 2026</time>
-          <div><strong>Confirmed speakers and detailed program announced.</strong></div>
+          <time>Date to be announced</time>
+          <div><strong>Registration opens.</strong></div>
         </li>
         <li>
           <time>Date to be announced</time>
-          <div><strong>Registration opens.</strong><span class="tentative">Tentative</span>
-          <br>Timing depends on pending funding decisions. Watch this page.</div>
-        </li>
-        <li>
-          <time>Spring 2027</time>
-          <div><strong>Poster abstracts due.</strong><span class="tentative">Tentative</span>
+          <div><strong>Poster abstracts due.</strong>
           <br>All general participants are asked to bring a poster.</div>
         </li>
         <li data-now>
@@ -766,10 +761,9 @@ def build_theme():
 
   <section class="cta">
     <div class="wrap wrap--narrow">
-      <p class="eyebrow">Next</p>
-      <h2>The program is built around discussion, not just talks.</h2>
-      <p>Two full days of invited presentations, four poster sessions and four moderated
-      discussion periods.</p>
+      <p class="eyebrow">Program</p>
+      <h2>Two full days of invited presentations, four poster sessions and three
+      moderated discussion periods.</h2>
       <div class="btn-row">
         <a class="btn btn--ghost" href="program.html">See the program</a>
         <a class="btn btn--ghost" href="speakers.html">Invited speakers</a>
@@ -968,8 +962,7 @@ def build_register():
     h = page_hero(
         "Registration",
         "Taking part",
-        "Attendance is limited to about 100 people. Registration opens once funding decisions "
-        "are settled.",
+        "Attendance is limited to about 100 people.",
     )
     body = """  <section class="section">
     <div class="wrap">
@@ -977,13 +970,10 @@ def build_register():
         <div>
           <p class="eyebrow">Status</p>
           <h2>Registration is not yet open.</h2>
-          <p class="lede">The opening date depends on pending funding decisions, and will be
-          announced here and by email to the workshop mailing list.</p>
-          <p>If you received an invitation email, replying to it is what matters for now &mdash;
-          it tells the organizers you intend to come, and it holds a place against a hard capacity
-          limit. Formal registration comes later.</p>
+          <p class="lede">The opening date will be announced here and by email to the workshop
+          mailing list.</p>
           <div class="btn-row">
-            <a class="btn" href="mailto:{email}?subject=B2%20Workshop%202027%20%E2%80%94%20mailing%20list">
+            <a class="btn" href="mailto:{email}?subject=Reasoning%20Workshop%202027%20%E2%80%94%20mailing%20list">
               Ask to join the mailing list</a>
           </div>
         </div>
@@ -996,11 +986,11 @@ def build_register():
             </li>
             <li>
               <time>Date to be announced</time>
-              <div><strong>Registration opens</strong><span class="tentative">Tentative</span></div>
+              <div><strong>Registration opens</strong></div>
             </li>
             <li>
-              <time>Spring 2027</time>
-              <div><strong>Poster abstracts due</strong><span class="tentative">Tentative</span></div>
+              <time>Date to be announced</time>
+              <div><strong>Poster abstracts due</strong></div>
             </li>
           </ul>
         </div>
@@ -1040,8 +1030,8 @@ def build_register():
       <h2>Every participant presents</h2>
       <p>Four hour-long poster sessions are scheduled across Monday and Tuesday, two on
       each day.</p>
-      <p>An abstract submission system is being set up. Submission opens alongside registration,
-      and the deadline will be announced with it.</p>
+      <p>An abstract submission system is being set up. Details will be announced with
+      registration.</p>
       <div class="note" style="margin-top:2rem">
         Sessions may be recorded and published. Registration will include a permission waiver
         covering recording and publication; you will be able to decline it.
@@ -1137,8 +1127,7 @@ def build_organizers():
   <section class="cta">
     <div class="wrap wrap--narrow">
       <p class="eyebrow">Contact</p>
-      <h2>One address reaches the whole committee.</h2>
-      <p><a href="mailto:{email}">{email}</a></p>
+      <p class="lede"><a href="mailto:{email}">{email}</a></p>
       <p>Department of Hydrology &amp; Atmospheric Sciences<br>
       University of Arizona, Tucson, Arizona</p>
     </div>
